@@ -305,26 +305,8 @@ end
 function ItemRack.UpdateClassSpecificStuff()
 	local _,class = UnitClass("player")
 
-	if class=="WARRIOR" or class=="ROGUE" or class=="HUNTER" or class=="DEATHKNIGHT" or class=="MONK" then
+	if class=="WARRIOR" or class=="ROGUE" or class=="HUNTER" then
 		ItemRack.CanWearOneHandOffHand = 1
-	end
-
-	if class=="WARRIOR" then
-		if (GetSpecialization() == 2) then
-			ItemRack.HasTitansGrip = 1
-			ItemRack.SlotInfo[17].INVTYPE_2HWEAPON = 1
-		else
-			ItemRack.HasTitansGrip = nil
-			ItemRack.SlotInfo[17].INVTYPE_2HWEAPON = nil
-		end
-	end
-
-	if class=="SHAMAN" then
-		if (GetSpecialization() == 2) then
-			ItemRack.CanWearOneHandOffHand = 1
-		else
-			ItemRack.CanWearOneHandOffHand = nil
-		end
 	end
 end
 
